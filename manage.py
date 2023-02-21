@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import dotenv
+from dotenv import load_dotenv
 import pathlib
 
 def main():
@@ -12,7 +12,7 @@ def main():
     #     dotenv.read_dotenv(str(DOT_ENV_PATH))
     # else:
     #     print("No .env found, be sure to make it.")
-    dotenv.read_dotenv()
+    load_dotenv()
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trydjango.settings')
     try:
         from django.core.management import execute_from_command_line
